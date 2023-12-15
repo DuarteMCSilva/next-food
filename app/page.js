@@ -1,7 +1,12 @@
 import ImageSlideshow from '@/components/images/image-slideshow';
 import classes from './page.module.css';
 import Link from 'next/link';
+
 export default function Home() {
+  const navOptions = [ 
+    {path: '/community', displayText: 'Join the Community'},
+    {path: '/meals', displayText: 'Explore Meals'}
+  ];
   return (
     <>
       <header className={classes.header}>
@@ -13,9 +18,10 @@ export default function Home() {
             <h1> NextLevel Food !!</h1>
             <p> Taste & share food from all over the world.</p>
           </div>
-          <div className={classes.section}>
-            <Link href='/community'> Join the Community </Link>
-            <Link href='/meals'> Explore Meals </Link>
+          <div className={classes.cta}>
+            {navOptions.map( ({path, displayText}) => {   
+              return (<Link key={path} href={path}> {displayText} </Link>)
+            })}
           </div>
         </div>
       </header>
