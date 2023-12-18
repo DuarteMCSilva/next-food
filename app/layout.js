@@ -1,6 +1,6 @@
 import './globals.css';
 import MainHeader from '@/components/header/main-header';
-export const metadata = {
+export const metadata = {  // dynamic via function generateMetadata({params})
   title: 'NextLevel Food',
   description: 'Delicious meals, shared by a food-loving community.',
 };
